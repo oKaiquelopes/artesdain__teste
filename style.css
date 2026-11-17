@@ -1,0 +1,146 @@
+:root{
+  --papel:#faf8f4; --tinta:#1b1815; --argila:#9a6f52; --areia:#e8dfd2; --oliva:#6e6a4e; --cinza:#6d665e;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,sans-serif;
+  --pad:1.25rem; --nav-h:4rem;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font:400 1rem/1.55 var(--sans);color:var(--tinta);background:var(--papel);
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  -webkit-tap-highlight-color:transparent;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--argila);outline-offset:3px}
+
+/* topo */
+.topo{padding:calc(3rem + env(safe-area-inset-top)) var(--pad) 2.5rem;overflow:hidden}
+.topo h1{font:400 clamp(3.6rem,19vw,7.5rem)/.88 var(--serif);letter-spacing:-.025em;text-wrap:balance}
+.risco{display:block;width:72%;max-width:20rem;height:2.2rem;margin-top:.9rem;fill:none;stroke:var(--argila);stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.risco path{vector-effect:non-scaling-stroke}
+.topo p{margin-top:.9rem;font:italic 400 1.4rem/1.3 var(--serif);color:var(--cinza)}
+
+/* perfil (estilo rede social) */
+.perfil{display:flex;align-items:center;gap:1.1rem;margin:0 0 1.75rem .4rem}
+.avatar{flex:none;width:6.25rem;height:6.25rem;border-radius:50%;overflow:hidden;background:var(--areia);
+  display:grid;place-items:center;box-shadow:0 0 0 4px var(--papel),0 0 0 6px var(--argila)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar span{font:italic 400 2.6rem/1 var(--serif);color:var(--argila)}
+.seguir{padding:.6rem 1.1rem;border:1px solid var(--tinta);border-radius:999px;text-decoration:none;font-size:.875rem;font-weight:500}
+.seguir:active{background:var(--tinta);color:var(--papel)}
+
+/* colagem de destaques */
+.colagem{position:relative;height:26rem;max-width:34rem;margin:2.5rem auto 0}
+.solta{position:absolute;margin:0;width:46%}
+.solta:nth-child(1){left:2%;top:0;transform:rotate(-6deg)}
+.solta:nth-child(2){right:2%;top:3.5rem;transform:rotate(5deg)}
+.solta:nth-child(3){left:26%;top:10.5rem;width:48%;transform:rotate(-1.5deg);z-index:2}
+
+/* molduras (papel com borda, estilo foto impressa) */
+.obra{
+  display:block;width:100%;padding:.45rem .45rem .5rem;margin:0 0 .875rem;
+  background:#fff;border:1px solid var(--areia);border-radius:2px;text-align:left;
+  box-shadow:0 1px 0 rgba(27,24,21,.06),0 10px 14px -10px rgba(27,24,21,.4);
+  break-inside:avoid;transition:transform .25s;
+}
+.obra .foto{display:block;aspect-ratio:var(--r,1);background:var(--areia);overflow:hidden}
+.obra .foto img,.ph{width:100%;height:100%;object-fit:cover}
+.ph{background:var(--areia)}
+.legenda{display:block;font:italic 400 .95rem/1.2 var(--serif);color:var(--cinza);padding:.55rem .1rem .15rem}
+.mural .obra:nth-child(3n+1){transform:rotate(-.9deg)}
+.mural .obra:nth-child(3n+2){transform:rotate(.8deg)}
+.obra:active{transform:scale(.97)}
+
+/* seções */
+.secao{padding:3.5rem var(--pad);scroll-margin-top:.5rem}
+.secao h2{font:400 2.1rem/1 var(--serif);margin-bottom:1rem}
+.nota{color:var(--cinza);max-width:36ch;margin:-.2rem 0 1.5rem}
+.areia{background:var(--areia);box-shadow:0 0 0 100vmax var(--areia);clip-path:inset(0 -100vmax)}
+.escura{background:var(--tinta);color:var(--papel);box-shadow:0 0 0 100vmax var(--tinta);clip-path:inset(0 -100vmax)}
+.escura .nota{color:#bfb6aa}
+
+/* frase de respiro */
+.frase{background:var(--argila);color:var(--papel);text-align:center;padding:4.5rem var(--pad);
+  font:italic 400 clamp(2.3rem,10.5vw,4.25rem)/1.05 var(--serif);text-wrap:balance}
+
+/* filtros */
+.chips{display:flex;gap:.5rem;overflow-x:auto;margin:0 calc(var(--pad) * -1) 1.5rem;padding:0 var(--pad);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:.5rem 1rem;border:1px solid var(--tinta);border-radius:999px;background:transparent;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+.mural{columns:2;column-gap:.875rem;padding-bottom:.5rem}
+
+/* loja */
+.vitrine{display:grid;grid-template-columns:1fr 1fr;gap:2rem .875rem}
+.item{display:flex;flex-direction:column}
+.item .foto{aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:var(--papel)}
+.item .foto img,.item .foto .ph{width:100%;height:100%;object-fit:cover}
+.item h3{font:400 1.4rem/1.1 var(--serif);margin-top:.8rem}
+.item p{font-size:.875rem;color:var(--cinza);margin-top:.35rem;flex:1}
+.preco{font-weight:700;margin-top:.6rem}
+.comprar{display:block;margin-top:.8rem;padding:.85rem .75rem;border-radius:2px;background:var(--tinta);color:var(--papel);
+  text-align:center;text-decoration:none;font-size:.9rem;font-weight:500}
+.comprar:active{background:var(--argila)}
+.comprar.off{background:var(--papel);color:var(--cinza);pointer-events:none}
+.encomenda{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--argila)}
+.encomenda h3{font:400 2rem/1.05 var(--serif)}
+.encomenda p{margin-top:.5rem;max-width:34ch;color:var(--cinza)}
+.encomenda .comprar{display:inline-block;margin-top:1.1rem;padding:.9rem 1.5rem}
+
+/* processo */
+.passos{list-style:none;padding:0;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:3.25rem 1fr;padding:1.4rem 0;border-top:1px solid var(--areia)}
+.passos li::before{content:counter(p);grid-row:span 2;font:italic 400 2.75rem/.9 var(--serif);color:var(--argila)}
+.passos h3{font:400 1.55rem/1.1 var(--serif)}
+.passos p{margin-top:.35rem;color:var(--cinza);max-width:34ch}
+
+/* sobre */
+.sobre{font:400 1.4rem/1.4 var(--serif);max-width:32ch}
+.sobre p+p{margin-top:1rem}
+.assina{font:italic 400 2.2rem/1 var(--serif);color:#d4a581;margin-top:1.75rem}
+.redes{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.redes a{padding:.65rem 1.2rem;border:1px solid currentColor;border-radius:999px;text-decoration:none;font-size:.9rem}
+.rodape{background:var(--tinta);color:#bfb6aa;text-align:center;padding:1rem var(--pad) 3rem;font-size:.85rem}
+.rodape p:first-child{font:italic 400 1.25rem/1.3 var(--serif);color:var(--papel);margin-bottom:.6rem}
+.rodape a{text-underline-offset:3px;text-decoration-color:var(--argila)}
+
+/* navegação inferior */
+.nav{position:fixed;inset:auto 0 0 0;height:calc(var(--nav-h) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);
+  display:grid;grid-template-columns:repeat(3,1fr);background:rgba(250,248,244,.92);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--areia);z-index:5}
+.nav a{display:grid;place-items:center;text-decoration:none;font-size:.95rem;color:var(--cinza);position:relative}
+.nav a.on{color:var(--tinta);font-weight:500}
+.nav a.on::after{content:"";position:absolute;top:-1px;left:30%;right:30%;height:2px;background:var(--argila)}
+
+/* visualizador */
+.visor{border:0;padding:0;width:100%;height:100%;max-width:none;max-height:none;background:rgba(27,24,21,.96);color:#fff}
+.visor[open]{display:grid;place-items:center}
+.visor figure{width:100%;padding:3.5rem 1rem 2rem;text-align:center}
+.visor img,.visor .ph{max-width:100%;max-height:78dvh;margin:0 auto;width:auto;height:auto}
+.visor .ph{width:min(100%,24rem);aspect-ratio:var(--r,1)}
+.visor figcaption{margin-top:1rem;font:italic 400 1.35rem/1.2 var(--serif)}
+.fechar{position:absolute;top:calc(.5rem + env(safe-area-inset-top));right:.75rem;width:2.75rem;height:2.75rem;border:0;background:none;font-size:2rem;line-height:1;color:#fff}
+
+/* movimento: só no carregamento do topo */
+@keyframes surgir{from{opacity:0;transform:translateY(.6rem)}to{opacity:1;transform:none}}
+@keyframes desenhar{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:no-preference){
+  .topo h1,.topo p,.perfil{animation:surgir .9s ease both}
+  .topo p{animation-delay:1.2s}
+  .risco path{stroke-dasharray:1;stroke-dashoffset:1;animation:desenhar 1.6s .5s ease forwards}
+  .colagem .solta{animation:surgir 1s 1.5s ease both}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (min-width:700px){
+  :root{--pad:2.5rem}
+  .topo,.secao>*,.colagem{max-width:68rem;margin-inline:auto}
+  .secao>*{max-width:68rem}
+  .colagem{height:34rem;max-width:40rem}
+  .solta:nth-child(3){top:14rem}
+  .mural{columns:3}
+  .vitrine{grid-template-columns:repeat(4,1fr)}
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Artes da In 🍎</title>
+<meta name="description" content="Desenhos, quadrinhos e bolsas feitos à mão. Um cantinho pequeno, cheio de papel, linha e tinta.">
+<meta name="theme-color" content="#faf8f4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="perfil">
+    <div class="avatar" id="avatar"></div>
+    <a class="seguir" id="seguir" target="_blank" rel="noopener">Seguir no Pinterest</a>
+  </div>
+  <h1 id="nome">Artes da In 🍎</h1>
+  <svg class="risco" viewBox="0 0 400 40" aria-hidden="true" preserveAspectRatio="none">
+    <path pathLength="1" d="M2 24C40 4 70 40 110 22S180 6 220 24 300 38 340 14s45-2 58 8"/>
+  </svg>
+  <p id="tagline"></p>
+  <div class="colagem" id="colagem"></div>
+</header>
+
+<main>
+  <section class="secao" id="obras" aria-labelledby="t-obras">
+    <h2 id="t-obras">Do papel pro mundo</h2>
+    <p class="nota">Pedaços de dias, guardados em traço. Toque numa obra para chegar mais perto.</p>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo"></div>
+    <div class="mural" id="mural"></div>
+  </section>
+
+  <p class="frase" id="frase"></p>
+
+  <section class="secao areia" id="loja" aria-labelledby="t-loja">
+    <h2 id="t-loja">Para levar com você</h2>
+    <p class="nota">Cada peça nasce devagar, em pouca quantidade. Se uma delas chamar você, toque em comprar e a gente conversa pelo WhatsApp.</p>
+    <div class="vitrine" id="vitrine"></div>
+    <div class="encomenda">
+      <h3 id="enc-titulo"></h3>
+      <p id="enc-texto"></p>
+      <a class="comprar" id="enc-link" target="_blank" rel="noopener">Pedir uma encomenda</a>
+    </div>
+  </section>
+
+  <section class="secao" id="processo" aria-labelledby="t-processo">
+    <h2 id="t-processo">Como nasce uma peça</h2>
+    <ol class="passos" id="passos"></ol>
+  </section>
+
+  <section class="secao escura" id="sobre" aria-labelledby="t-sobre">
+    <h2 id="t-sobre">Sobre este canto</h2>
+    <div class="sobre" id="sobre-texto"></div>
+    <p class="redes" id="redes"></p>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Feito à mão, com calma e com carinho.</p>
+  <p>Site por <a href="https://okaiquelopes.vercel.app" target="_blank" rel="noopener">Lopes Tecnologia</a></p>
+</footer>
+
+<nav class="nav" aria-label="Seções">
+  <a href="#obras" class="on">Obras</a>
+  <a href="#loja">Loja</a>
+  <a href="#sobre">Sobre</a>
+</nav>
+
+<dialog class="visor" id="visor" aria-label="Obra ampliada">
+  <button class="fechar" id="fechar" aria-label="Fechar">&times;</button>
+  <figure id="visor-fig"></figure>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
